@@ -1,0 +1,30 @@
+{
+  "name": "webpack-101",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server",
+    "prod": "webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthew-french/webpack-101.git"
+  },
+  "author": "Matt French <matt.french@palringo.com> (http://palringo.im)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matthew-french/webpack-101/issues"
+  },
+  "homepage": "https://github.com/matthew-french/webpack-101#readme",
+  "devDependencies": {
+    "css-loader": "0.28.9",
+    "extract-text-webpack-plugin": "3.0.2",
+    "html-webpack-plugin": "2.30.1",
+    "node-sass": "4.7.2",
+    "sass-loader": "6.0.6",
+    "style-loader": "0.20.2",
+    "webpack": "3.11.0",
+    "webpack-dev-server": "2.11.1"
+  }
+}
