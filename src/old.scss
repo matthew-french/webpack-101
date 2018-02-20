@@ -1,0 +1,27 @@
+.mimicbot_body {
+  min-height: 120px;
+  background: url(https://s3-eu-west-1.amazonaws.com/bots-palringo-com/bots/mimic_bot/default/background.png);
+}
+
+.bubble {
+  width: 125px;
+  height: 120px;
+}
+
+.avatar {
+    /* This image is 687 wide by 1024 tall, similar to your aspect ratio */
+    background-image: url('https://s3-eu-west-1.amazonaws.com/bots-palringo-com/bots/mimic_bot/noavatar.jpeg');
+
+    /* make a square container */
+    width: 120px;
+    height: 120px;
+
+    /* fill the container, preserving aspect ratio, and cropping to fit */
+    background-size: cover;
+
+    /* center the image vertically and horizontally */
+    background-position: top center;
+
+    /* round the edges to a circle with border radius 1/2 container size */
+    border-radius: 50%;
+}

@@ -4,7 +4,7 @@ const path = require('path');
 const distPath  = path.resolve(__dirname, './dist');
 
 module.exports = {
-  entry: './src/app.js',
+  entry: './src/default.js',
   output: {
     path: distPath,
     filename: 'app.bundle.js'
@@ -30,12 +30,12 @@ module.exports = {
   },
   plugins: [
       new HtmlWebpackPlugin({
-        title: 'project',
+        title: 'Default Message Pack Template',
         hash: true,
-        template: 'src/index.html'
+        template: 'src/default.html'
     }),
     new ExtractTextPlugin({
-      filename: 'style.css',
+      filename: 'default.css',
       disable: false,
       allChunks: true
     })
