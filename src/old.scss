@@ -1,27 +1,120 @@
-.mimicbot_body {
-  min-height: 120px;
-  background: url(https://s3-eu-west-1.amazonaws.com/bots-palringo-com/bots/mimic_bot/default/background.png);
-}
-
-.bubble {
-  width: 125px;
+.mimicbot_default_image.u_12345 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-image: url(http://notworking), url(https://s3-eu-west-1.amazonaws.com/bots-palringo-com/bots/mimic_bot/noavatar.jpeg);
+  background-repeat: no-repeat;
+  background-size: 120px 120px;
+  width: 120px;
   height: 120px;
 }
 
-.avatar {
-    /* This image is 687 wide by 1024 tall, similar to your aspect ratio */
-    background-image: url('https://s3-eu-west-1.amazonaws.com/bots-palringo-com/bots/mimic_bot/noavatar.jpeg');
+.mimicbot_default_body {
+  background: url(https://s3-eu-west-1.amazonaws.com/bots-palringo-com/bots/mimic_bot/default/background.png);
+}
 
-    /* make a square container */
-    width: 120px;
-    height: 120px;
+.circlify {
+  border-radius: 120px 120px 120px 120px;
+  box-shadow: 0 3px 8px -5px #000000;
+  height: 120px;
+  width: 120px;
+}
 
-    /* fill the container, preserving aspect ratio, and cropping to fit */
-    background-size: cover;
+.mimicbot_default_body {
+  overflow: hidden;
+  border: 1px solid #1f0012;
+  border-radius: inherit;
+  color: #fff;
+  position: relative;
+  padding: 0.5em 0em 0em 0.5em;
+}
 
-    /* center the image vertically and horizontally */
-    background-position: top center;
+.mimicbot_default_container {
+  clear: both;
+  min-height: 120px;
+  position: relative;
+}
 
-    /* round the edges to a circle with border radius 1/2 container size */
-    border-radius: 50%;
+.mimicbot_default_outer {
+  bottom: 0;
+  right: 0;
+  width: 125px;
+  min-height: 120px;
+  position: absolute;
+}
+
+.mimicbot_default_inner {
+  margin: 0 auto;
+  width: 125px;
+  height: 120px;
+  position: relative;
+}
+
+.mimicbot_default_message.ar {
+  direction: rtl;
+}
+
+.mimicbot_default_message {
+  color: white;
+}
+
+.mimicbot_default_message_outer {
+  padding-right: 125px;
+  text-wrap: avoid;
+  word-wrap: break-word;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Arial", "Microsoft Sans Serif", "Sans Serif";
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+.mimicbot_default_bubble {
+  position: relative;
+  width: 100%;
+  padding: 6px;
+  border: #aaa solid 1px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  margin-top: 2px;
+  z-index: 5;
+  min-height: 3em;
+  -webkit-box-shadow: 0px 2px 2px 0px #aaa;
+  box-shadow: 0px 2px 2px 0px #aaa;
+  background: #cdd0a0;
+  background: -moz-linear-gradient(top, #cdd0a0 68%, #b6d3a2 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(68%, #cdd0a0), color-stop(100%, #b6d3a2));
+  background: -webkit-linear-gradient(top, #cdd0a0 68%, #b6d3a2 100%);
+  background: -o-linear-gradient(top, #cdd0a0 68%, #b6d3a2 100%);
+  background: -ms-linear-gradient(top, #cdd0a0 68%, #b6d3a2 100%);
+  background: linear-gradient(to bottom, #cdd0a0 68%, #b6d3a2 100%);
+}
+
+.mimicbot_default_bubble:after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: -16px;
+  border-style: solid;
+  border-width: 15px 0 15px 15px;
+  border-color: transparent #aaa;
+  display: block;
+  width: 0;
+  z-index: 1;
+}
+.mimicbot_default_bubble:before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 100%;
+  border-style: solid;
+  border-width: 15px 0 15px 15px;
+  border-color: transparent #CDD0A6;
+  display: block;
+  width: 0;
+  z-index: 5;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  .mimicbot_default_body {
+    background-size: 23px 15px;
+  }
 }

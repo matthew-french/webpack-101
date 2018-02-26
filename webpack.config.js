@@ -4,10 +4,14 @@ const path = require('path');
 const distPath  = path.resolve(__dirname, './dist');
 
 module.exports = {
-  entry: './src/default.js',
+  entry: {
+    index: './src/index.js',
+    old: './src/old.js',
+    default: './src/default.js',
+  },
   output: {
     path: distPath,
-    filename: 'app.bundle.js'
+    filename: '[name].bundle.js'
   },
   module: {
     rules: [
@@ -29,10 +33,23 @@ module.exports = {
     open: true
   },
   plugins: [
-      new HtmlWebpackPlugin({
+    new HtmlWebpackPlugin({
+        title: 'Index',
+        hash: true,
+        filename: 'index.html',
+        template: './src/index.html'
+    }),
+    new HtmlWebpackPlugin({
+        title: 'Old',
+        hash: true,
+        filename: 'old.html',
+        template: './src/old.html'
+    }),
+    new HtmlWebpackPlugin({
         title: 'Default Message Pack Template',
         hash: true,
-        template: 'src/default.html'
+        filename: 'default.html',
+        template: './src/default.html'
     }),
     new ExtractTextPlugin({
       filename: 'default.css',
