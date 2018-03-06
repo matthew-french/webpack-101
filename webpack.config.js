@@ -1,17 +1,33 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const path = require('path');
-const distPath  = path.resolve(__dirname, './dist');
+
+const PATHS = {
+  pug: path.resolve(__dirname, './src'),
+  output: path.resolve(__dirname, './dist'),
+}
+
+const pugTemplate = (name) => {
+  return new HtmlWebpackPlugin({
+      title: name,
+      hash: true,
+      filename: name + '.html',
+      template: PATHS.pug + '/' + name + '.pug'
+  });
+}
 
 module.exports = {
   entry: {
     index: './src/index.js',
-    old: './src/old.js',
-    default: './src/default.js',
+    default: './src/default/default.scss',
+    mosaic: './src/mosaic/mosaic.scss',
+    thought: './src/thought/thought.scss',
+    spin: './src/spin/spin.scss',
+    shake: './src/shake/shake.scss'
   },
   output: {
-    path: distPath,
-    filename: '[name].bundle.js'
+    path: PATHS.output,
+    filename: '[name].js'
   },
   module: {
     rules: [
@@ -20,41 +36,40 @@ module.exports = {
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: ['css-loader', 'sass-loader'],
-          publicPath: 'dist'
+          publicPath: 'dist/styles'
         })
+      },
+      {
+        test: /\.pug$/,
+        loaders: [{
+          loader: 'html-loader'
+        }, {
+          loader: 'pug-html-loader',
+            options: {
+              data: {
+                message: 'This is a test message',
+                language: 'en',
+                avatar: '',
+                noAvatar: 'https://s3-eu-west-1.amazonaws.com/bots-palringo-com/bots/mimic_bot/noavatar.jpeg',
+                css: '',
+                uniqueId: '12345'
+              }
+            }
+        }]
       }
     ]
   },
   devServer: {
-    contentBase: distPath,
+    contentBase: PATHS.output,
     compress: true,
     port: 9000,
     stats: 'errors-only',
     open: true
   },
   plugins: [
-    new HtmlWebpackPlugin({
-        title: 'Index',
-        hash: true,
-        filename: 'index.html',
-        template: './src/index.html'
-    }),
-    new HtmlWebpackPlugin({
-        title: 'Old',
-        hash: true,
-        filename: 'old.html',
-        template: './src/old.html'
-    }),
-    new HtmlWebpackPlugin({
-        title: 'Default Message Pack Template',
-        hash: true,
-        filename: 'default.html',
-        template: './src/default.html'
-    }),
+    pugTemplate('index'),
     new ExtractTextPlugin({
-      filename: 'default.css',
-      disable: false,
-      allChunks: true
+      filename: '[name].css'
     })
   ]
 }

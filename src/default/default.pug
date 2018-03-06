@@ -1,0 +1,11 @@
+div(class='mimicbot-mp')
+  div(class='mimicbot-mp__bubble')
+    blockquote(class='mimicbot-mp__bubble__message-pack-speech mimicbot-mp__bubble__message-pack-speech--right')
+      p(class='language_' + language) #{message}
+  div(class='mimicbot-mp__mimicbot-avatar')
+    div(class='mimicbot-mp__mimicbot-avatar__avatar u_' + uniqueId)
+link(rel='stylesheet', href=css)
+style(type='text/css').
+  .u_#{uniqueId} {
+    background-image: url(#{avatar}), url(#{noAvatar});
+  }

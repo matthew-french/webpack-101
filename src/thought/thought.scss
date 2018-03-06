@@ -1,0 +1,96 @@
+.mimicbot-mp-thought {
+  overflow: hidden;
+  border: 1px solid #1f0012;
+  color: #fff;
+  position: relative;
+  padding: 5px;
+  margin: 0;
+  background: url('https://s3-eu-west-1.amazonaws.com/bots-palringo-com/bots/mimic_bot/images/thought-min.jpg');
+  min-height: 135px;
+  min-width: 300px;
+
+  &__mimicbot-avatar {
+    position: absolute;
+    width: 120px;
+    right: 5px;
+    top: 10px;
+
+    &__avatar {
+      background-image: url('https://s3-eu-west-1.amazonaws.com/bots-palringo-com/bots/mimic_bot/images/noavatar.jpeg');
+      width: 120px;
+      height: 120px;
+      background-size: cover;
+      background-position: top center;
+      border-radius: 50%;
+      border-radius: 120px 120px 120px 120px;
+      border: 1px solid #1f0012;
+    }
+  }
+
+  &__bubble {
+    padding-right: 75px;
+    text-wrap: avoid;
+    word-wrap: break-word;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Arial", "Microsoft Sans Serif", "Sans Serif";
+    line-height: 1.2em;
+
+    p {
+      padding: 5px;
+      margin: 0;
+      color: #fff;
+
+      &.language_ar {
+        direction: rtl;
+      }
+    }
+
+    &__message-pack-thought {
+      min-height: 50px;
+      position:relative;
+      padding:5px;
+      margin:1px 72px 1px 1px;
+      color:#000;
+      background:#075698; /* default background for browsers without gradient support */
+      /* css3 */
+      -webkit-border-radius:10px;
+      -moz-border-radius:10px;
+      border-radius:10px;
+      z-index: 5;
+
+        /* creates the larger circle */
+        &:before {
+          content:"";
+          position:absolute;
+          z-index:10;
+          top:5px;
+          right:-32px;
+          width:30px;
+          height:30px;
+          background:#075698;
+          /* css3 */
+          -webkit-border-radius:30px;
+          -moz-border-radius:30px;
+          border-radius:30px;
+          /* reduce the damage in FF3.0 */
+          display:block;
+        }
+
+        /* creates the smaller circle */
+        &:after {
+          content:"";
+          position:absolute;
+          z-index:10;
+          top:21px;
+          right:-48px;
+          width:16px;
+          height:16px;
+          background:#075698;
+          /* css3 */
+          -webkit-border-radius:16px;
+          -moz-border-radius:16px;
+          border-radius:16px;
+          display:block;
+        }
+    }
+  }
+}

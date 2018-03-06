@@ -1,0 +1,144 @@
+/* ------------------------------------------
+PURE CSS SPEECH BUBBLES
+by Nicolas Gallagher
+- http://nicolasgallagher.com/pure-css-speech-bubbles/
+
+http://nicolasgallagher.com
+http://twitter.com/necolas
+
+Created: 02 March 2010
+Version: 1.2 (03 March 2011)
+
+Dual licensed under MIT and GNU GPLv2 Nicolas Gallagher
+------------------------------------------ */
+
+/* NOTE: Some declarations use longhand notation so that it can be clearly
+explained what specific properties or values do and what their relationship
+is to other properties or values in creating the effect */
+
+
+/* ============================================================================================================================
+== BUBBLE WITH AN ISOCELES TRIANGLE
+** ============================================================================================================================ */
+
+/* THE SPEECH BUBBLE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.message-pack-speech {
+  min-height: 50px;
+  position:relative;
+  padding:5px;
+  margin:1px;
+  color:#000;
+  background:#f3961c; /* default background for browsers without gradient support */
+  /* css3 */
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+  z-index: 5;
+
+  &:after {
+    content:"";
+    position:absolute;
+    bottom:-13px; /* value = - border-top-width - border-bottom-width */
+    left:47px; /* controls horizontal position */
+    border-width:13px 13px 0; /* vary these values to change the angle of the vertex */
+    border-style:solid;
+    border-color:#f3961c transparent;
+    /* reduce the damage in FF3.0 */
+    display:block;
+    width:0;
+  }
+
+  &--top {
+    background:-webkit-gradient(linear, 0 0, 0 100%, from(#f3961c), to(#f9d835));
+    background:-moz-linear-gradient(#f3961c, #f9d835);
+    background:-o-linear-gradient(#f3961c, #f9d835);
+    background:linear-gradient(#f3961c, #f9d835);
+
+    &:after {
+      top:-15px; /* value = - border-top-width - border-bottom-width */
+      right:50px; /* controls horizontal position */
+      bottom:auto;
+      left:auto;
+      border-width:0 15px 15px; /* vary these values to change the angle of the vertex */
+      border-color:#f3961c transparent;
+    }
+  }
+
+  &--left {
+    margin-left:50px;
+    background:#f3961c;
+
+    &:after {
+      top:16px; /* controls vertical position */
+      left:-50px; /* value = - border-left-width - border-right-width */
+      bottom:auto;
+      border-width:10px 50px 10px 0;
+      border-color:transparent red;
+    }
+  }
+
+  &--right {
+    margin-right:30px;
+
+    &:after {
+      top:12px; /* controls vertical position */
+      right:-14px; /* value = - border-left-width - border-right-width */
+      bottom:auto;
+      left:auto;
+      border-width:12px 0 12px 14px;
+      border-color:transparent #f3961c;
+    }
+  }
+}
+
+.message-pack-thought {
+  min-height: 50px;
+  position:relative;
+  padding:5px;
+  margin:1px 72px 1px 1px;
+  color:#000;
+  background:#075698; /* default background for browsers without gradient support */
+  /* css3 */
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+  z-index: 5;
+
+    /* creates the larger circle */
+    &:before {
+      content:"";
+      position:absolute;
+      z-index:10;
+      top:5px;
+      right:-32px;
+      width:30px;
+      height:30px;
+      background:#075698;
+      /* css3 */
+      -webkit-border-radius:30px;
+      -moz-border-radius:30px;
+      border-radius:30px;
+      /* reduce the damage in FF3.0 */
+      display:block;
+    }
+
+    /* creates the smaller circle */
+    &:after {
+      content:"";
+      position:absolute;
+      z-index:10;
+      top:21px;
+      right:-48px;
+      width:16px;
+      height:16px;
+      background:#075698;
+      /* css3 */
+      -webkit-border-radius:16px;
+      -moz-border-radius:16px;
+      border-radius:16px;
+      /* reduce the damage in FF3.0 */
+      display:block;
+    }
+}

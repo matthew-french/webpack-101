@@ -1,0 +1,22 @@
+div(class='mimicbot_old_body')
+  div(class='mimicbot_old_container')
+    div(class='mimicbot_old_message_outer')
+      p(id='message' class='mimicbot_old_message mimicbot_old_bubble ' + language) #{message}
+    div(class='mimicbot_old_outer')
+      div(class='mimicbot_old_inner')
+        div(class='circlify mimicbot_old_image u_' + uniqueId)
+link(rel='stylesheet', href=css)
+style(type="text/css").
+  .mimicbot_old_image.u_#{uniqueId} {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-image: url(#{avatar}), url(#{noAvatar});
+    background-repeat: no-repeat;
+    background-size: 120px 120px;
+    width: 120px;
+    height: 120px;
+  }
+  .mimicbot_old_body {
+    background: url('https://s3-eu-west-1.amazonaws.com/bots-palringo-com/bots/mimic_bot/old/background.png');
+  }

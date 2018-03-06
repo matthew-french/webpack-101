@@ -1,4 +1,4 @@
-.mimicbot_default_image.u_12345 {
+.mimicbot_old_image.u_12345 {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -9,8 +9,8 @@
   height: 120px;
 }
 
-.mimicbot_default_body {
-  background: url(https://s3-eu-west-1.amazonaws.com/bots-palringo-com/bots/mimic_bot/default/background.png);
+.mimicbot_old_body {
+  background: url(https://s3-eu-west-1.amazonaws.com/bots-palringo-com/bots/mimic_bot/old/background.png);
 }
 
 .circlify {
@@ -20,7 +20,7 @@
   width: 120px;
 }
 
-.mimicbot_default_body {
+.mimicbot_old_body {
   overflow: hidden;
   border: 1px solid #1f0012;
   border-radius: inherit;
@@ -29,13 +29,13 @@
   padding: 0.5em 0em 0em 0.5em;
 }
 
-.mimicbot_default_container {
+.mimicbot_old_container {
   clear: both;
   min-height: 120px;
   position: relative;
 }
 
-.mimicbot_default_outer {
+.mimicbot_old_outer {
   bottom: 0;
   right: 0;
   width: 125px;
@@ -43,22 +43,22 @@
   position: absolute;
 }
 
-.mimicbot_default_inner {
+.mimicbot_old_inner {
   margin: 0 auto;
   width: 125px;
   height: 120px;
   position: relative;
 }
 
-.mimicbot_default_message.ar {
+.mimicbot_old_message.ar {
   direction: rtl;
 }
 
-.mimicbot_default_message {
+.mimicbot_old_message {
   color: white;
 }
 
-.mimicbot_default_message_outer {
+.mimicbot_old_message_outer {
   padding-right: 125px;
   text-wrap: avoid;
   word-wrap: break-word;
@@ -67,7 +67,7 @@
   font-weight: bold;
 }
 
-.mimicbot_default_bubble {
+.mimicbot_old_bubble {
   position: relative;
   width: 100%;
   padding: 6px;
@@ -89,7 +89,7 @@
   background: linear-gradient(to bottom, #cdd0a0 68%, #b6d3a2 100%);
 }
 
-.mimicbot_default_bubble:after {
+.mimicbot_old_bubble:after {
   content: "";
   position: absolute;
   top: 10px;
@@ -101,7 +101,7 @@
   width: 0;
   z-index: 1;
 }
-.mimicbot_default_bubble:before {
+.mimicbot_old_bubble:before {
   content: "";
   position: absolute;
   top: 10px;
@@ -114,7 +114,7 @@
   z-index: 5;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
-  .mimicbot_default_body {
+  .mimicbot_old_body {
     background-size: 23px 15px;
   }
 }
