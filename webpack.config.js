@@ -1,10 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-
-exports.clean = (path) => ({
-    plugins: [new CleanWebpackPlugin([path])],
-});
 
 const path = require('path');
 
@@ -92,11 +87,6 @@ module.exports = {
             filename: 'style/[name].css',
             disable: false,
             allChunks: true,
-        }),
-        new ExtraneousFileCleanupPlugin({
-            extensions: ['.js'],
-            minBytes: 5000,
-            paths: ['/dist'],
         }),
     ],
 };
