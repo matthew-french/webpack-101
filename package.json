@@ -19,11 +19,13 @@
   },
   "homepage": "https://github.com/matthew-french/webpack-101#readme",
   "devDependencies": {
+    "clean-webpack-plugin": "0.1.18",
     "css-loader": "0.28.9",
     "extract-text-webpack-plugin": "3.0.2",
     "file-loader": "1.1.10",
     "html-loader": "0.5.5",
     "html-webpack-plugin": "2.30.1",
+    "image-webpack-loader": "4.1.0",
     "node-sass": "4.7.2",
     "pug": "2.0.0-rc.4",
     "pug-html-loader": "1.1.5",
@@ -31,7 +33,9 @@
     "sass-loader": "6.0.6",
     "style-loader": "0.20.2",
     "webpack": "3.11.0",
-    "webpack-dev-server": "2.11.1"
+    "webpack-cleanup-plugin": "0.5.1",
+    "webpack-dev-server": "2.11.1",
+    "webpack-extraneous-file-cleanup-plugin": "1.0.5"
   },
   "dependencies": {
     "pug-static-loader": "2.0.0"
