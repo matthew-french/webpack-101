@@ -1,11 +1,14 @@
 div(class='mimicbot-mp-mosaic')
   div(class='mimicbot-mp-mosaic__bubble')
     blockquote(class='mimicbot-mp-mosaic__bubble__message-pack-speech mimicbot-mp-mosaic__bubble__message-pack-speech--right')
-      p(class='language_' + language) #{message}
+      p(class='language_' + language) #{message} #{options} #{pageTitle}
   div(class='mimicbot-mp-mosaic__mimicbot-avatar')
     div(class='mimicbot-mp-mosaic__mimicbot-avatar__avatar u_' + uniqueId)
 link(rel='stylesheet', href=css)
 style(type='text/css').
+  .mimicbot-mp-mosaic {
+    background-image: url(#{baseUrl}#{images}mosaic.jpg);
+  }
   .u_#{uniqueId} {
     background-image: url(#{avatar}), url(#{noAvatar});
   }

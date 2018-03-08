@@ -1,0 +1,14 @@
+div(class='mimicbot-mp-sam')
+  div(class='mimicbot-mp-sam__bubble')
+    blockquote(class='mimicbot-mp-sam__bubble__message-pack-speech mimicbot-mp-sam__bubble__message-pack-speech--right')
+      p(class='language_' + language) #{message} #{baseUrl}
+  div(class='mimicbot-mp-sam__mimicbot-avatar')
+    div(class='mimicbot-mp-sam__mimicbot-avatar__avatar u_' + uniqueId)
+link(rel='stylesheet', href=css)
+style(type='text/css').
+  .mimicbot-mp-sam {
+    background-image: url(#{baseUrl}#{images}sam.jpg);
+  }
+  .u_#{uniqueId} {
+    background-image: url(#{avatar}), url(#{noAvatar});
+  }

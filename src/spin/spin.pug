@@ -6,6 +6,9 @@ div(class='mimicbot-mp-spin')
     div(class='mimicbot-mp-spin__mimicbot-avatar__avatar u_' + uniqueId)
 link(rel='stylesheet', href=css)
 style(type='text/css').
+  .mimicbot-mp-spin {
+    background-image: url(#{baseUrl}#{images}spin.jpg);
+  }
   .u_#{uniqueId} {
     background-image: url(#{avatar}), url(#{noAvatar});
   }

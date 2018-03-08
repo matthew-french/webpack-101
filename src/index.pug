@@ -2,15 +2,7 @@ doctype html
 html(lang="en")
   head
     title= pageTitle
-    script(type='text/javascript').
-      if (foo) bar(1 + 5)
   body
-    blockquote(class='message-pack-speech message-pack-speech--right')
-      p(class='language_en') Hello world
-    
-    blockquote(class='message-pack-thought')
-      p(class='language_en') Hello world
-      
     include default/default.pug
     br
     include spin/spin.pug
@@ -20,3 +12,5 @@ html(lang="en")
     include thought/thought.pug
     br
     include shake/shake.pug
+    br
+    include sam/sam.pug

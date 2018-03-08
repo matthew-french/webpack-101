@@ -11,8 +11,8 @@ const PATHS = {
 const pugTemplate = (name) => new HtmlWebpackPlugin({
     title: name,
     hash: true,
-    filename: `${name }.html`,
-    template: `${PATHS.pug }/${ name }.pug`,
+    filename: `${ name }.html`,
+    template: `${ PATHS.pug }/${ name }.pug`,
 });
 
 module.exports = {
@@ -23,10 +23,11 @@ module.exports = {
         shake: './src/shake/index.js',
         spin: './src/spin/index.js',
         thought: './src/thought/index.js',
+        sam: './src/sam/index.js',
     },
     output: {
         path: PATHS.output,
-        filename: '[name].js',
+        filename: 'bin/[name].js',
     },
     module: {
         rules: [
@@ -35,7 +36,6 @@ module.exports = {
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: ['css-loader', 'sass-loader'],
-                    publicPath: 'dist',
                 }),
             },
             {
@@ -46,11 +46,13 @@ module.exports = {
                     loader: 'pug-html-loader',
                     options: {
                         data: {
-                            message: 'This is a test message',
+                            baseUrl: '',
+                            images: '/images/',
+                            styles: '/styles/',
+                            message: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur rid',
                             language: 'en',
-                            avatar: '',
-                            noAvatar: 'https://s3-eu-west-1.amazonaws.com/bots-palringo-com/bots/mimic_bot/noavatar.jpeg',
-                            css: '',
+                            avatar: 'avatar.jpg',
+                            noAvatar: 'noavatar.jpeg',
                             uniqueId: '12345',
                         },
                     },
@@ -61,13 +63,7 @@ module.exports = {
                 loaders: [{
                     loader: 'file-loader',
                     options: {
-                        name: '/images/[name].[ext]',
-                    },
-                },
-                {
-                    loader: 'image-webpack-loader',
-                    options: {
-                        bypassOnDebug: true,
+                        name: 'images/[name].[ext]',
                     },
                 },
                 ],
@@ -84,9 +80,9 @@ module.exports = {
     plugins: [
         pugTemplate('index'),
         new ExtractTextPlugin({
-            filename: 'style/[name].css',
+            filename: 'styles/[name].css',
             disable: false,
-            allChunks: true,
+            allChunks: false,
         }),
     ],
 };
