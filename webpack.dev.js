@@ -16,13 +16,13 @@ const pugTemplate = (name) => new HtmlWebpackPlugin({
 
 module.exports = {
     entry: {
-        index: './src/index.js',
-        default: './src/default/index.js',
-        mosaic: './src/mosaic/index.js',
-        shake: './src/shake/index.js',
-        spin: './src/spin/index.js',
-        thought: './src/thought/index.js',
-        sam: './src/sam/index.js',
+        index: './templates/index.js',
+        default: './templates/default/index.js',
+        mosaic: './templates/mosaic/index.js',
+        shake: './templates/shake/index.js',
+        spin: './templates/spin/index.js',
+        thought: './templates/thought/index.js',
+        sam: './templates/sam/index.js',
     },
     output: {
         path: PATHS.output,
