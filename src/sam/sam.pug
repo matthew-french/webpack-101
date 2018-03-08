@@ -4,11 +4,11 @@ div(class='mimicbot-mp-sam')
       p(class='language_' + language) #{message} #{baseUrl}
   div(class='mimicbot-mp-sam__mimicbot-avatar')
     div(class='mimicbot-mp-sam__mimicbot-avatar__avatar u_' + uniqueId)
-link(rel='stylesheet', href=css)
+link(rel='stylesheet', href=baseUrl + styles + 'sam.css')
 style(type='text/css').
   .mimicbot-mp-sam {
-    background-image: url(#{baseUrl}#{images}sam.jpg);
+    background-image: url(#{baseUrl}#{images}/sam.jpg);
   }
   .u_#{uniqueId} {
-    background-image: url(#{avatar}), url(#{noAvatar});
+    background-image: url(#{baseUrl}#{images}/#{avatar}), url(#{baseUrl}#{images}/#{noAvatar});
   }

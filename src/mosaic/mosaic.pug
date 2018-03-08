@@ -4,11 +4,11 @@ div(class='mimicbot-mp-mosaic')
       p(class='language_' + language) #{message} #{options} #{pageTitle}
   div(class='mimicbot-mp-mosaic__mimicbot-avatar')
     div(class='mimicbot-mp-mosaic__mimicbot-avatar__avatar u_' + uniqueId)
-link(rel='stylesheet', href=css)
+link(rel='stylesheet', href=baseUrl + styles + 'mosaic.css')
 style(type='text/css').
   .mimicbot-mp-mosaic {
-    background-image: url(#{baseUrl}#{images}mosaic.jpg);
+    background-image: url(#{baseUrl}#{images}/mosaic.jpg);
   }
   .u_#{uniqueId} {
-    background-image: url(#{avatar}), url(#{noAvatar});
+    background-image: url(#{baseUrl}#{images}/#{avatar}), url(#{baseUrl}#{images}/#{noAvatar});
   }

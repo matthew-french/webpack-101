@@ -36,7 +36,7 @@ module.exports = {
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: ['css-loader', 'sass-loader'],
-                    publicPath: 'dist',
+                    publicPath: 'bin',
                 }),
             },
             {
@@ -52,8 +52,8 @@ module.exports = {
                             styles: '/styles',
                             message: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur rid',
                             language: 'en',
-                            avatar: 'avatar.jpg',
-                            noAvatar: 'noavatar.jpeg',
+                            avatar: '/avatar.jpg',
+                            noAvatar: '/noavatar.jpeg',
                             uniqueId: '12345',
                         },
                     },
@@ -64,7 +64,7 @@ module.exports = {
                 loaders: [{
                     loader: 'file-loader',
                     options: {
-                        name: '/images/[name].[ext]',
+                        name: 'images/[name].[ext]',
                     },
                 },
                 {
@@ -89,7 +89,7 @@ module.exports = {
         new ExtractTextPlugin({
             filename: 'styles/[name].css',
             disable: false,
-            allChunks: true,
+            allChunks: false,
         }),
     ],
 };

@@ -4,11 +4,11 @@ div(class='mimicbot-mp-spin')
       p(class='language_' + language) #{message}
   div(class='mimicbot-mp-spin__mimicbot-avatar')
     div(class='mimicbot-mp-spin__mimicbot-avatar__avatar u_' + uniqueId)
-link(rel='stylesheet', href=css)
+link(rel='stylesheet', href=baseUrl + styles + 'spin.css')
 style(type='text/css').
   .mimicbot-mp-spin {
-    background-image: url(#{baseUrl}#{images}spin.jpg);
+    background-image: url(#{baseUrl}#{images}/spin.jpg);
   }
   .u_#{uniqueId} {
-    background-image: url(#{avatar}), url(#{noAvatar});
+    background-image: url(#{baseUrl}#{images}/#{avatar}), url(#{baseUrl}#{images}/#{noAvatar});
   }

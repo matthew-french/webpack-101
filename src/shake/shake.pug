@@ -4,11 +4,11 @@ div(class='mimicbot-mp-shake')
       p(class='language_' + language) #{message}
   div(class='mimicbot-mp-shake__mimicbot-avatar')
     div(class='mimicbot-mp-shake__mimicbot-avatar__avatar u_' + uniqueId)
-link(rel='stylesheet', href=css)
+link(rel='stylesheet', href=baseUrl + styles + 'shake.css')
 style(type='text/css').
   .mimicbot-mp-shake {
-    background-image: url(#{baseUrl}#{images}shake.jpg);
+    background-image: url(#{baseUrl}#{images}/shake.jpg);
   }
   .u_#{uniqueId} {
-    background-image: url(#{avatar}), url(#{noAvatar});
+    background-image: url(#{baseUrl}#{images}/#{avatar}), url(#{baseUrl}#{images}/#{noAvatar});
   }
