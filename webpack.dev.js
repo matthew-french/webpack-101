@@ -4,7 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
 const PATHS = {
-    pug: path.resolve(__dirname, './src'),
+    pug: path.resolve(__dirname, './templates'),
     output: path.resolve(__dirname, './dist'),
 };
 
